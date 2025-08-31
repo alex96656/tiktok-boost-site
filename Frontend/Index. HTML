@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>TikTok Boost Dashboard</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <h1>TikTok Boost Dashboard</h1>
+  <form id="boostForm">
+    <input type="text" id="apiKey" placeholder="API Key" required><br>
+    <input type="text" id="username" placeholder="TikTok Username" required><br>
+    <select id="action">
+      <option value="views">Views</option>
+      <option value="likes">Likes</option>
+      <option value="followers">Followers</option>
+      <option value="comments">Comments</option>
+    </select><br>
+    <button type="submit">Boost</button>
+  </form>
+  <pre id="result"></pre>
+  <script src="script.js"></script>
+</body>
+</html>
