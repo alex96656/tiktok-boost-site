@@ -17,12 +17,15 @@ jobs:
     - name: Use Node.js
       uses: actions/setup-node@v3
       with:
-        node-version: '18'   # or the version your project uses
+        node-version: '18'
 
     - name: Install dependencies
       run: npm install
-      working-directory: ./  # root folder, adjust if package.json is in a subfolder
+      working-directory: ./  # <-- change this to your folder if package.json is not in root
 
     - name: Run Webpack
       run: npx webpack
-      working-directory: ./  # same as above
+      working-directory: ./  # <-- same folder as above 
+      git add .github/workflows/main.yml
+git commit -m "Fix GitHub Actions workflow path for package.json"
+git push
