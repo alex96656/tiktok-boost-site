@@ -1,0 +1,29 @@
+name: Node.js CI
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v3
+
+    - name: Setup Node.js
+      uses: actions/setup-node@v3
+      with:
+        node-version: '18'   # adjust if needed
+
+    - name: Install dependencies
+      run: npm install
+      working-directory: ./   # <-- if package.json is in root
+      # if in subfolder, use ./client or ./app
+
+    - name: Run Webpack
+      run: npx webpack
+      working-directory: ./   # same as above
